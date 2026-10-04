@@ -72,8 +72,8 @@ if (contactForm && contactMessage) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    // Show success message
-    contactMessage.textContent = 'Message sent successfully';
+    // Show success message in Indonesian
+    contactMessage.textContent = 'Pesan berhasil dikirim';
     contactMessage.className = 'contact__message text-center mt-3 mb-0 success';
 
     // Reset input fields
@@ -85,22 +85,4 @@ if (contactForm && contactMessage) {
       contactMessage.className = 'contact__message text-center mt-3 mb-0';
     }, 5000);
   });
-}
-
-/*=============== SCROLL REVEAL ANIMATION ===============*/
-if (typeof ScrollReveal !== 'undefined') {
-  const sr = ScrollReveal({
-    origin: 'top',
-    distance: '25px',
-    duration: 800,
-    delay: 100,
-    viewFactor: 0.05,
-    reset: false
-  });
-
-  sr.reveal('.home__data, .about__image, .skills__data');
-  sr.reveal('.home__image, .about__data, .skills__content', { origin: 'bottom', delay: 150 });
-  sr.reveal('.services__card', { interval: 60 });
-  sr.reveal('.projects__card', { interval: 60 });
-  sr.reveal('.contact__form', { delay: 100 });
 }
