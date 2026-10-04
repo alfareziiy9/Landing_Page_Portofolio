@@ -1,24 +1,12 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 /*=============== VARIABLES CSS ===============*/
 :root {
-  --header-height: 3.5rem;
+  --header-height: 4.5rem;
 
   /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
-  /* 
-      Change favorite color
-      Default: hsl(162, 100%, 40%)
-      Orange: hsl(14, 100%, 65%) - Blue: hsl(210, 100%, 70%)
-      Pink: hsl(356, 100%, 75%) - Purple: hsl(250, 100%, 75%)
-
-      For more colors visit: https://colors.dopely.top/color-pedia
-      -> Choose any color 
-      -> click on tab (Color Conversion)
-      -> Copy the color mode (HSL)
-  */
-
+  /* Default emerald turquoise color */
   --hue: 162;
   --first-color: hsl(var(--hue), 100%, 40%);
   --first-color-alt: hsl(var(--hue), 56%, 35%);
@@ -28,37 +16,37 @@
   --container-color: hsl(228, 15%, 15%);
 
   /*========== Font and typography ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Poppins", sans-serif;
-  --biggest-font-size: 2rem;
-  --bigger-font-size: 1.25rem;
-  --h1-font-size: 1.5rem;
-  --h2-font-size: 1.25rem;
-  --h3-font-size: 1rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
-  --smaller-font-size: .75rem;
+  --biggest-font-size: 2.5rem;
+  --bigger-font-size: 1.75rem;
+  --h1-font-size: 1.75rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: .95rem;
+  --small-font-size: .875rem;
+  --smaller-font-size: .813rem;
 
   /*========== Font weight ==========*/
   --font-regular: 400;
   --font-medium: 500;
   --font-semi-bold: 600;
+  --font-bold: 700;
 
   /*========== z index ==========*/
   --z-tooltip: 10;
-  --z-fixed: 100;
+  --z-fixed: 1030;
 }
 
-/*========== Responsive typography ==========*/
-@media screen and (min-width: 1152px) {
+/* Responsive typography */
+@media screen and (min-width: 992px) {
   :root {
     --biggest-font-size: 4rem;
-    --bigger-font-size: 2rem;
+    --bigger-font-size: 2.25rem;
     --h1-font-size: 2.25rem;
-    --h2-font-size: 1.5rem;
+    --h2-font-size: 1.75rem;
     --h3-font-size: 1.25rem;
     --normal-font-size: 1rem;
-    --small-font-size: .875rem;
+    --small-font-size: .9rem;
     --smaller-font-size: .813rem;
   }
 }
@@ -74,33 +62,23 @@ html {
   scroll-behavior: smooth;
 }
 
-input,
-textarea,
-button,
 body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-}
-
-body {
   background-color: var(--body-color);
   color: var(--text-color);
+  overflow-x: hidden;
 }
 
-input,
-textarea,
-button {
-  outline: none;
-  border: none;
-}
-
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
   color: var(--title-color);
-  font-weight: var(--font-medium);
+  font-weight: var(--font-semi-bold);
 }
 
 ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 a {
@@ -113,99 +91,481 @@ svg {
   height: auto;
 }
 
-/*=============== REUSABLE CSS CLASSES ===============*/
-.container {
-  max-width: 1120px;
-  margin-inline: 1.5rem;
-}
-
-.grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
+/*=============== REUSABLE SECTIONS ===============*/
 .section {
-  padding-block: 5rem 2rem;
+  padding-block: 6rem 3rem;
 }
 
-.section__title, 
+.section__title,
 .section__subtitle {
-  text-align: center;
   color: var(--title-color);
-  font-weight: var(--font-semi-bold);
 }
 
 .section__title {
   font-size: var(--h1-font-size);
+  font-weight: var(--font-semi-bold);
   margin-bottom: 1.5rem;
 }
 
 .section__subtitle {
+  display: block;
   font-size: var(--small-font-size);
-  margin-bottom: .25rem;
+  font-weight: var(--font-semi-bold);
+  margin-bottom: .35rem;
 }
 
 .section__subtitle span {
   color: var(--first-color);
 }
 
-.main {
-  overflow: hidden; /* For animation ScrollReveal */
+/* Custom Buttons */
+.btn-custom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--first-color);
+  color: hsl(228, 15%, 15%);
+  font-weight: var(--font-semi-bold);
+  padding: .9rem 2.2rem;
+  border-radius: .75rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all .3s ease;
+  box-shadow: 0 4px 16px hsla(162, 100%, 40%, 0.25);
 }
 
-/*=============== HEADER & NAV ===============*/
+.btn-custom:hover {
+  background-color: var(--first-color-alt);
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px hsla(162, 100%, 40%, 0.4);
+}
 
+/*=============== HEADER & NAVBAR ===============*/
+.header {
+  transition: background-color .4s, backdrop-filter .4s, box-shadow .4s, padding .4s;
+  background-color: transparent;
+  z-index: var(--z-fixed);
+}
 
-/* Navigation for mobile devices */
+.header.blur-header {
+  background-color: hsla(228, 15%, 15%, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 20px hsla(228, 15%, 10%, 0.4);
+}
 
+.nav__logo {
+  font-size: 1.25rem;
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color) !important;
+  letter-spacing: .5px;
+}
 
-/* Show menu */
+.nav__logo span {
+  color: var(--first-color);
+}
 
+.nav__toggle-icon {
+  font-size: 1.5rem;
+  color: var(--title-color);
+  cursor: pointer;
+}
 
-/* Add blur to header */
+.navbar-nav .nav-link {
+  color: var(--title-color);
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  transition: color .3s ease;
+  padding: .5rem 0;
+  position: relative;
+}
 
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--first-color) !important;
+}
 
-/* Active link */
-
+@media screen and (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: hsla(228, 15%, 15%, 0.96);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+  }
+}
 
 /*=============== HOME ===============*/
+.home {
+  padding-top: 7rem;
+}
 
+.home__subtitle {
+  font-size: var(--h3-font-size);
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  margin-bottom: .25rem;
+}
 
-/*=============== BUTTON ===============*/
+.home__subtitle span {
+  color: var(--first-color);
+}
 
+.home__title {
+  font-size: var(--biggest-font-size);
+  color: var(--first-color);
+  font-weight: var(--font-bold);
+  line-height: 1.15;
+  margin-bottom: .5rem;
+}
+
+.home__education {
+  font-size: var(--h2-font-size);
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  margin-bottom: 1.25rem;
+}
+
+.home__description {
+  color: var(--text-color);
+  line-height: 1.8;
+  max-width: 480px;
+  margin-bottom: 2rem;
+}
+
+/* Hexagon Social Links */
+.home__social-link,
+.footer__social-link {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 48px;
+  background-color: var(--first-color);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  transition: transform .3s ease, filter .3s ease;
+  text-decoration: none;
+}
+
+.home__social-link::before,
+.footer__social-link::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background-color: var(--container-color);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  z-index: 1;
+}
+
+.home__social-link i,
+.footer__social-link i {
+  position: relative;
+  z-index: 2;
+  color: var(--first-color);
+  font-size: 1.25rem;
+  transition: color .3s ease;
+}
+
+.home__social-link:hover,
+.footer__social-link:hover {
+  transform: translateY(-4px);
+  filter: drop-shadow(0 4px 12px hsla(162, 100%, 40%, 0.5));
+}
+
+.home__social-link:hover i,
+.footer__social-link:hover i {
+  color: #ffffff;
+}
+
+/* Hexagon Profile SVG Blob */
+.home__blob-wrapper,
+.about__blob-wrapper {
+  display: inline-block;
+  max-width: 430px;
+  width: 100%;
+}
+
+.home__blob,
+.about__blob {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 12px 32px hsla(162, 100%, 40%, 0.35));
+  transition: transform .4s ease, filter .4s ease;
+}
+
+.home__blob:hover,
+.about__blob:hover {
+  transform: translateY(-6px);
+  filter: drop-shadow(0 16px 40px hsla(162, 100%, 40%, 0.5));
+}
 
 /*=============== ABOUT ===============*/
-
+.about__description {
+  color: var(--text-color);
+  line-height: 1.8;
+  max-width: 500px;
+}
 
 /*=============== SKILLS ===============*/
+.skills__description {
+  color: var(--text-color);
+  line-height: 1.8;
+  max-width: 420px;
+}
 
+.skills__item {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  font-size: var(--normal-font-size);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+
+.skills__item span {
+  color: var(--first-color);
+  font-weight: var(--font-semi-bold);
+  font-size: 1.05rem;
+}
 
 /*=============== SERVICES ===============*/
+.services__card {
+  background-color: var(--container-color);
+  padding: 3.5rem 2rem 3rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+  height: 100%;
+}
 
+.services__card:hover {
+  transform: translateY(-8px);
+  border-color: var(--first-color);
+  box-shadow: 0 12px 32px hsla(162, 100%, 40%, 0.18);
+}
+
+.services__icon {
+  font-size: 3rem;
+  color: var(--first-color);
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.services__title {
+  font-size: var(--h3-font-size);
+  margin-bottom: .75rem;
+}
+
+.services__description {
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
 
 /*=============== PROJECTS ===============*/
+.projects__card {
+  position: relative;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background-color: var(--container-color);
+  transition: transform .3s ease, box-shadow .3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
 
+.projects__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+}
+
+.projects__img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform .4s ease;
+  display: block;
+}
+
+.projects__card:hover .projects__img {
+  transform: scale(1.06);
+}
+
+.projects__modal {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, hsla(228, 15%, 15%, 0) 15%, hsla(228, 15%, 12%, 0.95) 85%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+}
+
+.projects__subtitle {
+  color: var(--first-color);
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.projects__title {
+  color: var(--title-color);
+  font-size: var(--h3-font-size);
+  margin-block: .25rem .75rem;
+}
+
+.projects__button {
+  display: inline-flex;
+  align-items: center;
+  column-gap: .5rem;
+  color: var(--first-color);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  text-decoration: none;
+  transition: column-gap .3s ease, color .3s ease;
+}
+
+.projects__button:hover {
+  column-gap: .75rem;
+  color: #ffffff;
+}
 
 /*=============== CONTACT ===============*/
+.contact__input {
+  background-color: var(--container-color);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--title-color);
+  border-radius: .75rem;
+  padding: 1.1rem 1.25rem;
+  font-size: var(--normal-font-size);
+  transition: border-color .3s ease, box-shadow .3s ease, background-color .3s ease;
+}
 
+.contact__input:focus {
+  background-color: var(--container-color);
+  color: var(--title-color);
+  border-color: var(--first-color);
+  box-shadow: 0 0 0 .25rem hsla(162, 100%, 40%, 0.2);
+}
+
+.contact__input::placeholder {
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.contact__area {
+  resize: none;
+}
+
+.contact__message {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  min-height: 1.5rem;
+  transition: opacity .3s ease;
+}
+
+.contact__message.success {
+  color: var(--first-color);
+}
+
+.contact__message.error {
+  color: hsl(4, 100%, 65%);
+}
 
 /*=============== FOOTER ===============*/
+.footer {
+  background-color: var(--container-color);
+  padding-block: 4.5rem 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
 
+.footer__title {
+  font-size: 1.5rem;
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+  text-decoration: none;
+  letter-spacing: .5px;
+}
+
+.footer__title span {
+  color: var(--first-color);
+}
+
+.footer__education {
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+  margin-top: .25rem;
+}
+
+.footer__copy {
+  color: var(--text-color);
+  font-size: var(--smaller-font-size);
+  opacity: 0.8;
+}
 
 /*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar {
+  width: .6rem;
+  background-color: hsl(228, 12%, 25%);
+}
 
+::-webkit-scrollbar-thumb {
+  background-color: hsl(228, 8%, 35%);
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(228, 8%, 45%);
+}
 
 /*=============== SCROLL UP ===============*/
+.scrollup {
+  position: fixed;
+  right: 1.5rem;
+  bottom: -50%;
+  background-color: var(--container-color);
+  border: 1px solid var(--first-color);
+  display: inline-flex;
+  padding: .6rem;
+  border-radius: .5rem;
+  color: var(--first-color);
+  font-size: 1.25rem;
+  z-index: var(--z-tooltip);
+  transition: bottom .4s ease, transform .4s ease, background-color .3s ease, color .3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
 
+.scrollup:hover {
+  background-color: var(--first-color);
+  color: var(--body-color);
+  transform: translateY(-4px);
+}
 
-/* Show Scroll Up */
+.show-scroll {
+  bottom: 3rem;
+}
 
+/*=============== RESPONSIVE BREAKPOINTS ===============*/
+@media screen and (max-width: 576px) {
+  .section {
+    padding-block: 4.5rem 2rem;
+  }
 
-/*=============== BREAKPOINTS ===============*/
-/* For small devices */
+  .home__title {
+    font-size: 2.25rem;
+  }
 
-
-/* For medium devices */
-
-
-/* For large devices */
+  .home__blob-wrapper,
+  .about__blob-wrapper {
+    max-width: 320px;
+  }
+}

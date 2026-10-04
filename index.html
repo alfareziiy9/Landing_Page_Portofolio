@@ -1,74 +1,405 @@
 <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <!--=============== FAVICON ===============-->
-      <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+  <!--=============== FAVICON ===============-->
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 
-      <!--=============== REMIXICONS ===============-->
-      <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+  <!--=============== BOOTSTRAP CSS ===============-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-      <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="assets/css/styles.css">
+  <!--=============== REMIXICONS ===============-->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
 
-      <title>Responsive portfolio website - Bedimcode</title>
-   </head>
-   <body>
-      <!--==================== HEADER ====================-->
-      <header class="header" id="header">
-         
-      </header>
+  <!--=============== GOOGLE FONTS ===============-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-      <!--==================== MAIN ====================-->
-      <main class="main">
-         <!--==================== HOME ====================-->
-         <section class="home section" id="home">
-            
-         </section>
+  <!--=============== CUSTOM CSS ===============-->
+  <link rel="stylesheet" href="assets/css/styles.css">
 
-         <!--==================== ABOUT ====================-->
-         <section class="about section" id="about">
-            
-         </section>
+  <title>Patrick Moz - Responsive Portfolio Website</title>
+</head>
+<body>
+  <!--==================== HEADER / NAVBAR ====================-->
+  <header class="header fixed-top" id="header">
+    <nav class="navbar navbar-expand-lg navbar-dark container py-3">
+      <a class="navbar-brand nav__logo" href="#home">Patrick <span>Moz</span></a>
 
-         <!--==================== SKILLS ====================-->
-         <section class="skills section">
-            
-         </section>
+      <button class="navbar-toggler border-0 shadow-none p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="ri-menu-line nav__toggle-icon"></i>
+      </button>
 
-         <!--==================== SERVICES ====================-->
-         <section class="services section" id="services">
-            
-         </section>
+      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+        <ul class="navbar-nav gap-2 gap-lg-4 align-items-center pt-3 pt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-         <!--==================== PROJECTS ====================-->
-         <section class="projects section" id="projects">
-            
-         </section>
+  <!--==================== MAIN ====================-->
+  <main class="main">
+    <!--==================== HOME ====================-->
+    <section class="home section min-vh-100 d-flex align-items-center" id="home">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-6 order-2 order-lg-1 home__data">
+            <h3 class="home__subtitle">Hello, <span>I’m</span></h3>
+            <h1 class="home__title">Patrick Moz</h1>
+            <h3 class="home__education">Front-end Developer</h3>
+            <p class="home__description">
+              With knowledge in web development and design, I offer the best projects resulting in quality work.
+            </p>
+            <div class="home__buttons">
+              <a href="#contact" class="btn-custom">Let's Talk</a>
+            </div>
+            <div class="home__social d-flex gap-3 mt-4">
+              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="home__social-link" aria-label="GitHub">
+                <i class="ri-github-line"></i>
+              </a>
+              <a href="https://dribbble.com/" target="_blank" rel="noopener noreferrer" class="home__social-link" aria-label="Dribbble">
+                <i class="ri-dribbble-line"></i>
+              </a>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="home__social-link" aria-label="LinkedIn">
+                <i class="ri-linkedin-box-line"></i>
+              </a>
+            </div>
+          </div>
 
-         <!--==================== CONTACT ====================-->
-         <section class="contact section" id="contact">
-            
-         </section>
-      </main>
+          <div class="col-lg-6 order-1 order-lg-2 text-center home__image">
+            <div class="home__blob-wrapper">
+              <svg class="home__blob" viewBox="0 0 550 592" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <mask id="maskHome" mask-type="alpha">
+                  <path d="M263 48.1782C270.426 43.891 279.574 43.891 287 48.1782L501.157 171.822C508.583 176.109 513.157 184.032 513.157 192.606V439.894C513.157 448.468 508.583 456.391 501.157 460.678L287 584.322C279.574 588.609 270.426 588.609 263 584.322L48.843 460.678C41.4174 456.391 36.843 448.468 36.843 439.894V192.606C36.843 184.032 41.4174 175.109 48.843 170.822L263 48.1782Z" fill="#ffffff"/>
+                </mask>
+                <g mask="url(#maskHome)">
+                  <rect x="37" width="476" height="630" fill="url(#patternHome)"/>
+                  <path d="M285 51.6423L499.157 175.286C505.345 178.859 509.157 185.461 509.157 192.606V439.894C509.157 447.039 505.345 453.641 499.157 457.214L285 580.858C278.812 584.43 271.188 584.43 265 580.858L50.843 457.214C44.655 453.641 40.843 447.039 40.843 439.894V192.606C40.843 185.461 44.655 178.859 50.843 175.286L265 51.6423C271.188 48.0697 278.812 48.0696 285 51.6423Z" stroke="#00cca3" stroke-width="12"/>
+                </g>
+                <rect x="37" width="476" height="300" fill="url(#patternHomeHead)"/>
+                <defs>
+                  <pattern id="patternHome" patternContentUnits="objectBoundingBox" width="1" height="1">
+                    <use href="#imageHome" xlink:href="#imageHome" transform="matrix(0.00143057 0 0 0.00108108 0.0404062 0)"/>
+                  </pattern>
+                  <pattern id="patternHomeHead" patternContentUnits="objectBoundingBox" width="1" height="1">
+                    <use href="#imageHome" xlink:href="#imageHome" transform="matrix(0.00143057 0 0 0.00226984 0.0404062 0)"/>
+                  </pattern>
+                  <image id="imageHome" width="640" height="940" href="assets/img/perfil.png" xlink:href="assets/img/perfil.png"/>
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <!--==================== FOOTER ====================-->
-      <footer class="footer">
-         
-      </footer>
+    <!--==================== ABOUT ====================-->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-6 text-center about__image">
+            <div class="about__blob-wrapper">
+              <svg class="about__blob" viewBox="0 0 550 592" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <mask id="maskAbout" mask-type="alpha">
+                  <path d="M263 48.1782C270.426 43.891 279.574 43.891 287 48.1782L501.157 171.822C508.583 176.109 513.157 184.032 513.157 192.606V439.894C513.157 448.468 508.583 456.391 501.157 460.678L287 584.322C279.574 588.609 270.426 588.609 263 584.322L48.843 460.678C41.4174 456.391 36.843 448.468 36.843 439.894V192.606C36.843 184.032 41.4174 175.109 48.843 170.822L263 48.1782Z" fill="#ffffff"/>
+                </mask>
+                <g mask="url(#maskAbout)">
+                  <rect x="37" width="476" height="630" fill="url(#patternAbout)"/>
+                  <path d="M285 51.6423L499.157 175.286C505.345 178.859 509.157 185.461 509.157 192.606V439.894C509.157 447.039 505.345 453.641 499.157 457.214L285 580.858C278.812 584.43 271.188 584.43 265 580.858L50.843 457.214C44.655 453.641 40.843 447.039 40.843 439.894V192.606C40.843 185.461 44.655 178.859 50.843 175.286L265 51.6423C271.188 48.0697 278.812 48.0696 285 51.6423Z" stroke="#00cca3" stroke-width="12"/>
+                </g>
+                <rect x="37" width="476" height="300" fill="url(#patternAboutHead)"/>
+                <defs>
+                  <pattern id="patternAbout" patternContentUnits="objectBoundingBox" width="1" height="1">
+                    <use href="#imageAbout" xlink:href="#imageAbout" transform="matrix(0.00143057 0 0 0.00108108 0.0404062 0)"/>
+                  </pattern>
+                  <pattern id="patternAboutHead" patternContentUnits="objectBoundingBox" width="1" height="1">
+                    <use href="#imageAbout" xlink:href="#imageAbout" transform="matrix(0.00143057 0 0 0.00226984 0.0404062 0)"/>
+                  </pattern>
+                  <image id="imageAbout" width="640" height="940" href="assets/img/perfil.png" xlink:href="assets/img/perfil.png"/>
+                </defs>
+              </svg>
+            </div>
+          </div>
 
-      <!--========== SCROLL UP ==========-->
-      
+          <div class="col-lg-6 about__data">
+            <span class="section__subtitle text-lg-start">My <span>Intro</span></span>
+            <h2 class="section__title text-lg-start mb-4">About Me</h2>
+            <p class="about__description mb-4">
+              Frontend developer, I create web pages with UI / UX user interface, I have years of experience and many clients are happy with the projects carried out.
+            </p>
+            <div class="about__buttons">
+              <a href="#contact" class="btn-custom">Contact Me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <!--=============== SCROLLREVEAL ===============-->
-      <script src=""></script>
+    <!--==================== SKILLS ====================-->
+    <section class="skills section" id="skills">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-5 skills__data">
+            <span class="section__subtitle text-lg-start">Favorite <span>Skills</span></span>
+            <h2 class="section__title text-lg-start mb-4">My Skills</h2>
+            <p class="skills__description mb-4">
+              See fully what skills I have and perform, to develop the projects for you.
+            </p>
+            <div class="skills__buttons">
+              <a href="#projects" class="btn-custom">See Projects</a>
+            </div>
+          </div>
 
-      <!--=============== EMAIL JS ===============-->
-      
+          <div class="col-lg-7 skills__content ps-lg-5">
+            <div class="row g-4">
+              <div class="col-6">
+                <ul class="skills__list list-unstyled m-0">
+                  <li class="skills__item"><span>01.</span> HTML &amp; CSS</li>
+                  <li class="skills__item"><span>02.</span> JavaScript</li>
+                  <li class="skills__item"><span>03.</span> Bootstrap</li>
+                  <li class="skills__item"><span>04.</span> React</li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <ul class="skills__list list-unstyled m-0">
+                  <li class="skills__item"><span>05.</span> Git &amp; GitHub</li>
+                  <li class="skills__item"><span>06.</span> Figma</li>
+                  <li class="skills__item"><span>07.</span> Sketch</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <!--=============== MAIN JS ===============-->
-      <script src="assets/js/main.js"></script>
-   </body>
+    <!--==================== SERVICES ====================-->
+    <section class="services section" id="services">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section__subtitle">My <span>Services</span></span>
+          <h2 class="section__title mb-0">What I Do</h2>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-lg-4 col-md-6">
+            <div class="services__card">
+              <i class="ri-layout-3-line services__icon"></i>
+              <h3 class="services__title">Web Developer</h3>
+              <p class="services__description">
+                Development of custom web pages. Using current technologies and libraries of the labor field.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="services__card">
+              <i class="ri-pantone-line services__icon"></i>
+              <h3 class="services__title">UI/UX Designer</h3>
+              <p class="services__description">
+                I offer design of web interfaces and mobile applications, design made in figma, adobe xd and sketch.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="services__card">
+              <i class="ri-brush-line services__icon"></i>
+              <h3 class="services__title">Graphic Design</h3>
+              <p class="services__description">
+                I make designs at the client's request, banner design, posters, digital designs among others.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--==================== PROJECTS ====================-->
+    <section class="projects section" id="projects">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section__subtitle">My <span>Jobs</span></span>
+          <h2 class="section__title mb-0">Recent Projects</h2>
+        </div>
+
+        <div class="row g-4">
+          <!-- Project 1 -->
+          <div class="col-lg-4 col-md-6">
+            <article class="projects__card">
+              <img src="assets/img/project-img-1.jpg" alt="Modern website" class="projects__img">
+              <div class="projects__modal">
+                <span class="projects__subtitle">Web</span>
+                <h3 class="projects__title">Modern website</h3>
+                <a href="#projects" class="projects__button">
+                  View demo <i class="ri-arrow-right-line"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="col-lg-4 col-md-6">
+            <article class="projects__card">
+              <img src="assets/img/project-img-2.jpg" alt="Mobile app design" class="projects__img">
+              <div class="projects__modal">
+                <span class="projects__subtitle">App</span>
+                <h3 class="projects__title">Mobile application</h3>
+                <a href="#projects" class="projects__button">
+                  View demo <i class="ri-arrow-right-line"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="col-lg-4 col-md-6">
+            <article class="projects__card">
+              <img src="assets/img/project-img-3.jpg" alt="Web application" class="projects__img">
+              <div class="projects__modal">
+                <span class="projects__subtitle">Design</span>
+                <h3 class="projects__title">Dashboard UI</h3>
+                <a href="#projects" class="projects__button">
+                  View demo <i class="ri-arrow-right-line"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="col-lg-4 col-md-6">
+            <article class="projects__card">
+              <img src="assets/img/project-img-4.jpg" alt="E-commerce store" class="projects__img">
+              <div class="projects__modal">
+                <span class="projects__subtitle">Web</span>
+                <h3 class="projects__title">E-commerce store</h3>
+                <a href="#projects" class="projects__button">
+                  View demo <i class="ri-arrow-right-line"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="col-lg-4 col-md-6">
+            <article class="projects__card">
+              <img src="assets/img/project-img-5.jpg" alt="Brand identity design" class="projects__img">
+              <div class="projects__modal">
+                <span class="projects__subtitle">Design</span>
+                <h3 class="projects__title">Brand identity</h3>
+                <a href="#projects" class="projects__button">
+                  View demo <i class="ri-arrow-right-line"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="col-lg-4 col-md-6">
+            <article class="projects__card">
+              <img src="assets/img/project-img-6.jpg" alt="Creative portfolio" class="projects__img">
+              <div class="projects__modal">
+                <span class="projects__subtitle">Web</span>
+                <h3 class="projects__title">Creative agency</h3>
+                <a href="#projects" class="projects__button">
+                  View demo <i class="ri-arrow-right-line"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--==================== CONTACT ====================-->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section__subtitle">Get In <span>Touch</span></span>
+          <h2 class="section__title mb-0">Contact Me</h2>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-8">
+            <form class="contact__form" id="contact-form">
+              <div class="mb-4">
+                <input type="text" name="user_name" class="form-control contact__input" placeholder="Enter your name" required>
+              </div>
+              <div class="mb-4">
+                <input type="email" name="user_email" class="form-control contact__input" placeholder="Enter your email" required>
+              </div>
+              <div class="mb-4">
+                <textarea name="user_project" rows="5" class="form-control contact__input contact__area" placeholder="Enter your message" required></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn-custom">Send Message</button>
+              </div>
+              <p class="contact__message text-center mt-3 mb-0" id="contact-message"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!--==================== FOOTER ====================-->
+  <footer class="footer">
+    <div class="container">
+      <div class="row align-items-center gy-4 mb-5">
+        <div class="col-md-6 text-center text-md-start">
+          <a href="#home" class="footer__title">Patrick <span>Moz</span></a>
+          <p class="footer__education mb-0">Front-end Developer</p>
+        </div>
+        <div class="col-md-6">
+          <div class="footer__social d-flex justify-content-center justify-content-md-end gap-3">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Facebook">
+              <i class="ri-facebook-circle-line"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram">
+              <i class="ri-instagram-line"></i>
+            </a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Twitter">
+              <i class="ri-twitter-line"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom border-top border-secondary border-opacity-10 pt-4 text-center">
+        <span class="footer__copy">&#169; Copyright Bedimcode. All rights reserved</span>
+      </div>
+    </div>
+  </footer>
+
+  <!--========== SCROLL UP ==========-->
+  <a href="#home" class="scrollup" id="scroll-up" aria-label="Scroll to top">
+    <i class="ri-arrow-up-line"></i>
+  </a>
+
+  <!--=============== BOOTSTRAP JS BUNDLE ===============-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!--=============== SCROLLREVEAL ===============-->
+  <script src="assets/js/scrollreveal.min.js"></script>
+
+  <!--=============== MAIN JS ===============-->
+  <script src="assets/js/main.js"></script>
+</body>
 </html>
